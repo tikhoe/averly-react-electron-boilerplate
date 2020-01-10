@@ -1,6 +1,8 @@
 const electron = require("electron");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const {ipcMain} = require('electron');
+const say = require('say');
 
 const path = require("path");
 const isDev = require("electron-is-dev");
@@ -17,6 +19,23 @@ function createWindow() {
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
   
+  say.speak('Ticket number A, 114. To, counter number, 7.', 'Fiona', null, (err) => {
+    if (err) { return console.error(err) }
+    console.log('Text has been saved to hal.wav.')
+  })
+  
+  // console.log('====================================');
+  // console.log(voices);
+  // console.log('====================================');
+
+  // say.speak("Hello world", 'Good News', 1.0, (err) => {
+  //   if (err) {
+  //     return console.error(err)
+  //   }
+  
+  //   console.log('Text has been spoken.')
+  // });
+
   // Show chrome developer tools when in dev environment
   if (isDev) {
     mainWindow.webContents.openDevTools();
@@ -24,6 +43,13 @@ function createWindow() {
   // Create event to close window on close
   mainWindow.on("closed", () => (mainWindow = null));
 }
+
+ipcMain.on('callmyname', (event, arg) => {
+
+  console.log(
+    "hi", arg
+  );
+});
 
 // On launch create app window
 app.on("ready", createWindow);
