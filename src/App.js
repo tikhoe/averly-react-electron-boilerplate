@@ -1,13 +1,41 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-const { ipcRenderer } = require('electron');
+// var synth = window.speechSynthesis;
+
+const { ipcRenderer } = window.require("electron")
 
 
 export default class App extends React.Component {
 
   runcall(){
-    window.ipcRenderer.send('callmyname', {name:123});
+    var arg = {voice:"Samantha", letter: "A", number: 114}
+    var message = 'Ticket number: ' + arg.letter + ': ' + arg.number + '. To counter number: 7.'
+    ipcRenderer.send('callmyname', {message});
+    
+    // synth.onvoiceschanged = function() {
+    //   synth.getVoices();
+    //   console.log('got them');
+    // }
+
+    // var utterThis = "Ticket number! A. 114. To counter number! 1."
+    // var voices = speechSynthesis.getVoices()
+    // if (Object.keys(voices).length) {
+    //   console.log(voices);
+  
+    //   var voice = voices.filter((data)=>{ return (data.name==="Google UK English Female") })
+    //   // if(Object.keys(voice).length===0){
+    //   //     voice = voices.filter((data)=>{ return (data.name==="Fiona") })
+    //   // }
+    // }
+
+    // console.log(voice);
+    
+
+    // utterThis = new SpeechSynthesisUtterance(utterThis)
+    // utterThis.voice = voice[0]
+    // synth.speak(utterThis)
+
   }
 
   render() {

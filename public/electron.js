@@ -2,7 +2,9 @@ const electron = require("electron");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const {ipcMain} = require('electron');
-const say = require('say');
+// const say = require('say');
+const Say = require('say').Say
+const say = new Say('darwin' );
 
 const path = require("path");
 const isDev = require("electron-is-dev");
@@ -11,7 +13,14 @@ let mainWindow;
 
 function createWindow() {
   // Define the applications dimension
-  mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  mainWindow = new BrowserWindow({ 
+    width: 900,
+    height: 680,
+    webPreferences: {
+      webSecurity: false,
+      nodeIntegration: true
+    }
+  });
   // Determine what to render based on environment
   mainWindow.loadURL(
     isDev
@@ -19,10 +28,7 @@ function createWindow() {
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
   
-  say.speak('Ticket number A, 114. To, counter number, 7.', 'Fiona', null, (err) => {
-    if (err) { return console.error(err) }
-    console.log('Text has been saved to hal.wav.')
-  })
+  
   
   // console.log('====================================');
   // console.log(voices);
@@ -49,6 +55,11 @@ ipcMain.on('callmyname', (event, arg) => {
   console.log(
     "hi", arg
   );
+  // say.speak('Hello!')
+  say.speak(arg.message, arg.voice, null, (err) => {
+    if (err) { return console.error(err) }
+  })
+
 });
 
 // On launch create app window
