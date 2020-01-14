@@ -50,14 +50,13 @@
     "wait-on": "^3.3.0"
   },
   "author": {
-    "name": "Erick Wachira",
-    "email": "erick@werick.codes",
-    "url": "https://me.werick.codes"
+    "name": "Tikhoe Uirab",
+    "email": "skyeventure@gmail.com"
   },
   "build": {
-    "appId": "com.electron-react.app",
+    "appId": "com.cx-electron.app",
     "productName": "Electron React App",
-    "copyright": "Copyright © 2019 ${author}",
+    "copyright": "Copyright © 2020 ${author}",
     "mac": {
       "category": "public.app-category.utilities"
     },
