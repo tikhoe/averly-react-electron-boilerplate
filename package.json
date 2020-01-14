@@ -1,5 +1,5 @@
 {
-  "name": "electron_react_app",
+  "name": "Averly_ADS",
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
@@ -55,7 +55,7 @@
   },
   "build": {
     "appId": "com.cx-electron.app",
-    "productName": "Electron React App",
+    "productName": "Averly DS",
     "copyright": "Copyright © 2020 ${author}",
     "mac": {
       "category": "public.app-category.utilities"
