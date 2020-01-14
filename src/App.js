@@ -9,6 +9,7 @@ import './App.css';
 export default class App extends React.Component {
 
   runcall(){
+    // Microsoft Eva Mobile - English (United States)
     // var arg = {voice:"Samantha", letter: "A", number: 114}
     // var message = 'Ticket number: ' + arg.letter + ': ' + arg.number + '. To counter number: 7.'
     // ipcRenderer.send('callmyname', {message});
