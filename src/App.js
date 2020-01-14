@@ -3,15 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 // var synth = window.speechSynthesis;
 
-const { ipcRenderer } = window.require("electron")
+// const { ipcRenderer } = window.require("electron")
 
 
 export default class App extends React.Component {
 
   runcall(){
-    var arg = {voice:"Samantha", letter: "A", number: 114}
-    var message = 'Ticket number: ' + arg.letter + ': ' + arg.number + '. To counter number: 7.'
-    ipcRenderer.send('callmyname', {message});
+    // var arg = {voice:"Samantha", letter: "A", number: 114}
+    // var message = 'Ticket number: ' + arg.letter + ': ' + arg.number + '. To counter number: 7.'
+    // ipcRenderer.send('callmyname', {message});
     
     // synth.onvoiceschanged = function() {
     //   synth.getVoices();

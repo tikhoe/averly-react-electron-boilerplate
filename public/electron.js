@@ -50,17 +50,17 @@ function createWindow() {
   mainWindow.on("closed", () => (mainWindow = null));
 }
 
-ipcMain.on('callmyname', (event, arg) => {
+// ipcMain.on('callmyname', (event, arg) => {
 
-  console.log(
-    "hi", arg
-  );
-  // say.speak('Hello!')
-  say.speak(arg.message, arg.voice, null, (err) => {
-    if (err) { return console.error(err) }
-  })
+//   console.log(
+//     "hi", arg
+//   );
+//   // say.speak('Hello!')
+//   say.speak(arg.message, arg.voice, null, (err) => {
+//     if (err) { return console.error(err) }
+//   })
 
-});
+// });
 
 // On launch create app window
 app.on("ready", createWindow);
