@@ -9,9 +9,9 @@ var synth = window.speechSynthesis;
 export default class App extends React.Component {
 
   componentDidMount(){
-    // setTimeout(() => {
-    //   this.runcall()
-    // }, 15000);
+    setTimeout(() => {
+      this.runcall()
+    }, 15000);
   }
 
   runcall(){
@@ -22,19 +22,12 @@ export default class App extends React.Component {
       google: "Google UK English Female"
     }
 
-    // var arg = {voice: systemVoices.windows, letter: "A", number: 114}
-    // var message = 'Ticket number: ' + arg.letter + ': ' + arg.number + '. To counter number: 7.'
-    // ipcRenderer.send('callmyname', {message});
-
-    // Microsoft Eva Mobile - English (United States)
-
-    
     synth.onvoiceschanged = function() {
       synth.getVoices();
       console.log('got them');
     }
 
-    var utterThis = "Ticket number! A. 114. To counter number! 1."
+    var utterThis = "Ticket number: A: 114, to counter number 1."
     var voices = speechSynthesis.getVoices()
     console.log(voices);
     if (Object.keys(voices).length) {  
@@ -46,7 +39,6 @@ export default class App extends React.Component {
       console.log(voice);
     }
     
-
     utterThis = new SpeechSynthesisUtterance(utterThis)
     utterThis.voice = voice
     synth.speak(utterThis)
@@ -69,7 +61,7 @@ export default class App extends React.Component {
           >
             Learn React
           </a>
-          <button onClick={ ()=>this.runcall() }>Goooooo</button>
+          {/* <button onClick={ ()=>this.runcall() }>Goooooo</button> */}
         </header>
       </div>
     );
