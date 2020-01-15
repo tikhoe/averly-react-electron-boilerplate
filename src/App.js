@@ -9,6 +9,7 @@ var synth = window.speechSynthesis;
 export default class App extends React.Component {
 
   componentDidMount(){
+    this.runcall()
     setTimeout(() => {
       this.runcall()
     }, 15000);
