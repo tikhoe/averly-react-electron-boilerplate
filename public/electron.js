@@ -13,6 +13,7 @@ function createWindow() {
     width: 1920, 
     height: 1080, 
     fullscreen: true,
+    frame: false,
     title: 'Averly Digital Signage',
     webPreferences: {
       webSecurity: false,
