@@ -4,15 +4,15 @@ import './App.css';
 var synth = window.speechSynthesis;
 
 // const { ipcRenderer } = window.require("electron")
-
+// cenored pc IDUKBMH-EGPC5NU-GIJYKFS-G743XVH-JHM3KMY-RQL64ZT-36NVPNG-KXTDFAC
 
 export default class App extends React.Component {
 
   componentDidMount(){
     this.runcall()
-    setTimeout(() => {
+    setInterval(() => {
       this.runcall()
-    }, 15000);
+    }, 30000);
   }
 
   runcall(){
